@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class fadeOut : MonoBehaviour
 {
-    private float lifeTime = 1f;
+    
     public SpriteRenderer spriteRenderer;
+    private float lifeTime = 1f;
     public float timeForFade = 1f;
 
     void Start()

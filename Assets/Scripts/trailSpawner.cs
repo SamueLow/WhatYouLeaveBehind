@@ -5,7 +5,7 @@ using UnityEngine;
 public class trailSpawner : MonoBehaviour
 {
     public GameObject trail;
-    public float spawnRate = .3f;
+    private float spawnRate = .15f;
     public float spawnTimer = 0;
     public float startDelay = .1f;
 
@@ -33,6 +33,8 @@ public class trailSpawner : MonoBehaviour
     void Spawn()
     {
         var newTrail = Instantiate(trail);
+        
+        newTrail.transform.rotation = transform.rotation;
         newTrail.transform.position = transform.position;
         spawnTimer = 0;
     }

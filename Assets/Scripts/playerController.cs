@@ -8,15 +8,17 @@ public class playerController : MonoBehaviour
 {
 
     public Rigidbody2D rb2D;
-    public float speed = 7.25f;
+    private float speed = 3.25f;
     public Sprite[] idleSprites;//0 - down, 1- up, 2- left, 3- right
     public SpriteRenderer playerRenderer;
-    public float maxHealth = 100;
+    private int maxHealth = 100;
     public float currentHealth;
     public static playerController instance;//static means there is only one of it
     private HitboxController attackController;
     private HitboxController.Direction direction;
     private float attackLength = .05f;
+    public GameObject damageIcon;
+    public float damageIconSpawnDistance = .7f;
 
     
     private void Awake() 
@@ -32,6 +34,7 @@ public class playerController : MonoBehaviour
         rb2D = gameObject.GetComponent<Rigidbody2D>();
         attackController = gameObject.GetComponent<HitboxController>();
         HUDDisplay.instance.updateHPBar(currentHealth, maxHealth);
+        
     }
 
 
@@ -91,11 +94,18 @@ public class playerController : MonoBehaviour
             SceneManager.LoadScene(1);
     }
 
-    public void damagePlayer(float damageAmount)
+    public void damagePlayer(int damageAmount)
     {
         currentHealth -= damageAmount;
         HUDDisplay.instance.updateHPBar(currentHealth, maxHealth);
+        HUDDisplay.instance.playerTookDamage();
+        GameObject newDamageIcon = Instantiate(damageIcon);
+        newDamageIcon.transform.parent = transform;// makes the damage Icon parented to the player so that it moves with it
+        Vector2 direction = newDamageIcon.GetComponent<damageIconController>().direction;
+        newDamageIcon.transform.position = transform.position + ((Vector3)direction)*damageIconSpawnDistance;
     }
+
+
 
 
 }

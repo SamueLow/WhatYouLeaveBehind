@@ -15,7 +15,7 @@ public class enemyController : MonoBehaviour
     public bool finishedPath;
     public float repathRate = .5f;
     private float lastRepath = float.NegativeInfinity;
-    private float timeBTWShots = .9f;
+    private float timeBTWShots = 1.5f;
     private float timeSinceLastShot = 0;
 
 
