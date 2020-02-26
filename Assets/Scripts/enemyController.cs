@@ -17,7 +17,7 @@ public class enemyController : MonoBehaviour
     private float lastRepath = float.NegativeInfinity;
     private float timeBTWShots = 1.5f;
     private float timeSinceLastShot = 0;
-    private float currentHealth  = 2f;
+    private float currentHealth  = 3f;
 
 
     void FixedUpdate()

@@ -8,7 +8,7 @@ public class playerController : MonoBehaviour
 {
 
     public Rigidbody2D rb2D;
-    private float speed = 3.25f;
+    private float speed = 2.5f;
     public Sprite[] idleSprites;//0 - down, 1- up, 2- left, 3- right
     public SpriteRenderer playerRenderer;
     private int maxHealth = 100;

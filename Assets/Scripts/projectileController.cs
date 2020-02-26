@@ -5,7 +5,7 @@ using UnityEngine;
 public class projectileController : MonoBehaviour
 {
 
-    private float timeBTWShots = .1f;
+    private float timeBTWShots = .2f;
     public float timeSinceLastShot = 0;
 
     void FixedUpdate()
