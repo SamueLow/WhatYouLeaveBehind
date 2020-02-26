@@ -17,6 +17,7 @@ public class enemyController : MonoBehaviour
     private float lastRepath = float.NegativeInfinity;
     private float timeBTWShots = 1.5f;
     private float timeSinceLastShot = 0;
+    private float currentHealth  = 2f;
 
 
     void FixedUpdate()
@@ -107,6 +108,14 @@ public class enemyController : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("hitbox"))
+            takeDamage(playerController.instance.gameObject.GetComponent<HitboxController>().meleeDamage);
+    }
+
+    public void takeDamage(int damageAmount)
+    {
+        currentHealth -= damageAmount;
+        Debug.Log(currentHealth);
+        if (currentHealth <= 0)
             Destroy(gameObject);
     }
 }

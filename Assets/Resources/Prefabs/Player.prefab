@@ -332,6 +332,7 @@ GameObject:
   - component: {fileID: 4777922999550425348}
   - component: {fileID: 4777922999550425347}
   - component: {fileID: 4777922999550425346}
+  - component: {fileID: 3547610229419356317}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -419,15 +420,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb2D: {fileID: 0}
-  speed: 7.25
   idleSprites:
   - {fileID: 21300006, guid: 28faa1892b1e2ea488b113b42910a71d, type: 3}
   - {fileID: 21300000, guid: 28faa1892b1e2ea488b113b42910a71d, type: 3}
-  - {fileID: 21300004, guid: 28faa1892b1e2ea488b113b42910a71d, type: 3}
+  - {fileID: 21300000, guid: 55362471bb7bfd04f97975a8a3f254e2, type: 3}
   - {fileID: 21300002, guid: 28faa1892b1e2ea488b113b42910a71d, type: 3}
   playerRenderer: {fileID: 4777922999550425350}
-  maxHealth: 100
   currentHealth: 0
+  damageIcon: {fileID: 0}
+  damageIconSpawnDistance: 0.7
 --- !u!50 &4777922999550425348
 Rigidbody2D:
   serializedVersion: 4
@@ -482,6 +483,18 @@ MonoBehaviour:
   - {fileID: 4777922998317082011}
   - {fileID: 4777922998932215937}
   - {fileID: 4777923000010266381}
+--- !u!114 &3547610229419356317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4777922999550425352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65ed32e8d19b45b47b145b645f8a6d9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4777922999900355540
 GameObject:
   m_ObjectHideFlags: 0

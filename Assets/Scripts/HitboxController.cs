@@ -7,6 +7,7 @@ public class HitboxController : MonoBehaviour
     public GameObject[] hitboxes;
     private float timeBTWAttacks;
     private float timeSinceLastAttack = 0;
+    public int meleeDamage = 2;
     
 
     
