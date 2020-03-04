@@ -11,6 +11,7 @@ public class ThrowingRockController : MonoBehaviour
     private bool damagingPlayer = false;
     private int damage = 1;
 
+
     IEnumerator Start()
     {
         rock.SetActive(false);

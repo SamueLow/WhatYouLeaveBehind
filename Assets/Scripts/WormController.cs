@@ -11,6 +11,7 @@ public class WormController : MonoBehaviour
     public float speed = .05f;
     public bool hidden = true;
     public float hideDistance = 5f;
+    private float currentHealth = 13f;
 
 
 
@@ -34,6 +35,9 @@ public class WormController : MonoBehaviour
     }
     IEnumerator PopOut()  //kind of works like an update function, runs over multiple frame
     {
+        Collider2D child = gameObject.GetComponentInChildren<BoxCollider2D>();
+        child.GetComponent<BoxCollider2D> ().enabled = false;
+        GetComponent<CapsuleCollider2D> ().enabled = false;
         worm.SetActive(false);
         transform.localScale = Vector3.zero;
         while(transform.localScale.x < holeEndScale.x)
@@ -49,6 +53,15 @@ public class WormController : MonoBehaviour
             worm.transform.position += new Vector3(0, speed, 0);
             yield return new WaitForEndOfFrame();
         }
+        child.GetComponent<BoxCollider2D> ().enabled = true;
+        GetComponent<CapsuleCollider2D> ().enabled = true;
         InvokeRepeating("AttackPlayer", 0, 5f);
+    }
+
+    public void takeDamage(float damageAmount)
+    {
+        currentHealth -= damageAmount;
+        if (currentHealth <= 0)
+            Destroy(gameObject);
     }
 }

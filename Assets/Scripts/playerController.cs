@@ -11,7 +11,7 @@ public class playerController : MonoBehaviour
     private float speed = 2.5f;
     public Sprite[] idleSprites;//0 - down, 1- up, 2- left, 3- right
     public SpriteRenderer playerRenderer;
-    private int maxHealth = 100;
+    private float maxHealth = 100;
     public float currentHealth;
     public static playerController instance;//static means there is only one of it
     private HitboxController attackController;
@@ -94,7 +94,7 @@ public class playerController : MonoBehaviour
             SceneManager.LoadScene(1);
     }
 
-    public void damagePlayer(int damageAmount)
+    public void damagePlayer(float damageAmount)
     {
         currentHealth -= damageAmount;
         HUDDisplay.instance.updateHPBar(currentHealth, maxHealth);

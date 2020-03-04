@@ -10,9 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 7288883692560321194}
   - component: {fileID: 902813784127537076}
+  - component: {fileID: 591309198491874558}
   m_Layer: 0
   m_Name: Worm
-  m_TagString: Untagged
+  m_TagString: worm
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -79,6 +80,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 2
   m_SpriteSortPoint: 0
+--- !u!61 &591309198491874558
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2981873370871125793}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0.88, z: 0, w: 1.88}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 3.37, y: 4.36}
+    newSize: {x: 3.37, y: 4.36}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 3.37, y: 4.36}
+  m_EdgeRadius: 0
 --- !u!1 &3084762966769303354
 GameObject:
   m_ObjectHideFlags: 0
@@ -171,7 +198,7 @@ GameObject:
   - component: {fileID: 1919903720664330710}
   m_Layer: 0
   m_Name: RockCircle
-  m_TagString: Untagged
+  m_TagString: worm
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -254,7 +281,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 4.13, y: 1.89}
+  m_Size: {x: 4.04, y: 1.38}
   m_Direction: 1
 --- !u!114 &1919903720664330710
 MonoBehaviour:
@@ -272,3 +299,6 @@ MonoBehaviour:
   wormEndPos: {x: 0, y: 1.805, z: 0}
   wormStartPos: {x: 0, y: -2.235, z: 0}
   worm: {fileID: 2981873370871125793}
+  speed: 0.05
+  hidden: 1
+  hideDistance: 5

@@ -23,7 +23,7 @@ public class bulletController : MonoBehaviour
             
             return;
         }
-        Debug.Log("Pizza");
+
         Destroy(gameObject);
     }
 
@@ -38,6 +38,11 @@ public class bulletController : MonoBehaviour
         if(other.gameObject.CompareTag("Enemy")) 
         {
             other.gameObject.GetComponent<enemyController>().takeDamage(damage);
+        }
+
+        if(other.gameObject.CompareTag("worm")) 
+        {
+            other.gameObject.GetComponent<WormController>().takeDamage(damage);
         }
 
         if(other.gameObject.CompareTag("EnemyProjectile") ) 

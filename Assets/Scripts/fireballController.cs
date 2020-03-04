@@ -6,7 +6,7 @@ public class fireballController : MonoBehaviour
 {
     public Vector3 direction;
     public float speed;
-    private int damage = 2;
+    private float damage = 2;
     public GameObject shooter;
 
     void FixedUpdate()
