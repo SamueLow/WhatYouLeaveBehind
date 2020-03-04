@@ -4,10 +4,12 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - hitbox
   - Enemy
-  - enemyProjectile
   - Spawner
+  - hitbox
+  - enemyProjectile
+  - EnemyProjectile
+  - playerProjectile
   layers:
   - Default
   - TransparentFX
@@ -17,7 +19,7 @@ TagManager:
   - UI
   - 
   - 
-  - Walls
+  - 
   - 
   - 
   - 
@@ -44,4 +46,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Boss
+    uniqueID: 1601457245
     locked: 0

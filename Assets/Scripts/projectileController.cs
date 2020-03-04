@@ -5,14 +5,14 @@ using UnityEngine;
 public class projectileController : MonoBehaviour
 {
 
-    private float timeBTWShots = .2f;
+    public float timeBTWShots = .0001f;
     public float timeSinceLastShot = 0;
 
     void FixedUpdate()
     {
         if (Input.GetMouseButton(0)) //0 is left, 1 is right, 2 is scroll wheel
         {
-            if (timeSinceLastShot > timeBTWShots)
+            if (timeSinceLastShot >= timeBTWShots)
             {
                 Shoot();
                 timeSinceLastShot = 0;
@@ -29,7 +29,7 @@ public class projectileController : MonoBehaviour
         var worldPosition = Camera.main.ScreenToWorldPoint(screenPosition);
         worldPosition.z = 0;
 
-        var bulletPrefab = Resources.Load("Prefabs/Bullet") as GameObject;
+        var bulletPrefab = Resources.Load("Prefabs/greenBeam") as GameObject;
         var instantiatedBullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
         var newDirection = worldPosition - playerController.instance.gameObject.transform.position ;
 

@@ -8,7 +8,7 @@ public class spawnerController : MonoBehaviour
     public float spawnRate = 3f;
     public float spawnTimer = 0;
     public float minDistToPlayer = 5f;
-    private int currentHealth = 5;
+    private float currentHealth = 5f;
 
     void Update()
     {
@@ -31,7 +31,7 @@ public class spawnerController : MonoBehaviour
             takeDamage(playerController.instance.gameObject.GetComponent<HitboxController>().meleeDamage);
     }
 
-    public void takeDamage(int damageAmount)
+    public void takeDamage(float damageAmount)
     {
         currentHealth -= damageAmount;
         if (currentHealth <= 0)

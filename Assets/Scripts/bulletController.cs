@@ -6,7 +6,7 @@ public class bulletController : MonoBehaviour
 {
     public Vector3 direction;
     private float speed = 7f;
-    private int damage = 1;
+    private float damage = .1f;
     public GameObject shooter;
 
     void FixedUpdate()
@@ -16,26 +16,31 @@ public class bulletController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other) 
     {
-               Debug.Log("pizza");
-       
-        if(other.gameObject == shooter)
-                   return;
 
-
-
+       // this doesn't work for some reason, but it does in on trigger
+        if(other.gameObject == shooter || other.gameObject.CompareTag("playerProjectile"))
+        {
+            
+            return;
+        }
+        Debug.Log("Pizza");
         Destroy(gameObject);
     }
 
     private void OnTriggerEnter2D(Collider2D other) 
     {
-        Debug.Log("pizza");
+
+        if(other.gameObject == shooter || other.gameObject.CompareTag("playerProjectile"))
+        {
+            return;
+        }
 
         if(other.gameObject.CompareTag("Enemy")) 
         {
             other.gameObject.GetComponent<enemyController>().takeDamage(damage);
         }
 
-        if(other.gameObject.CompareTag("enemyProjectile") ) 
+        if(other.gameObject.CompareTag("EnemyProjectile") ) 
         {
             Destroy(other.gameObject);
         }

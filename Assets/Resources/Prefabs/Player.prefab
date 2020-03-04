@@ -483,6 +483,7 @@ MonoBehaviour:
   - {fileID: 4777922998317082011}
   - {fileID: 4777922998932215937}
   - {fileID: 4777923000010266381}
+  meleeDamage: 2
 --- !u!114 &3547610229419356317
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -495,6 +496,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65ed32e8d19b45b47b145b645f8a6d9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeBTWShots: 0.001
+  timeSinceLastShot: 0
 --- !u!1 &4777922999900355540
 GameObject:
   m_ObjectHideFlags: 0

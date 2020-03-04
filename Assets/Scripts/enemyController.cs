@@ -111,10 +111,9 @@ public class enemyController : MonoBehaviour
             takeDamage(playerController.instance.gameObject.GetComponent<HitboxController>().meleeDamage);
     }
 
-    public void takeDamage(int damageAmount)
+    public void takeDamage(float damageAmount)
     {
         currentHealth -= damageAmount;
-        Debug.Log(currentHealth);
         if (currentHealth <= 0)
             Destroy(gameObject);
     }
